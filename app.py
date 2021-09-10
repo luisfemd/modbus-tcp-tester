@@ -4,8 +4,8 @@ class MainScreen(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
 
-        self.label_url = tk.Label(self, text="URL")
-        self.label_port = tk.Label(self, text="Port")
+        self.label_url = tk.Label(self, text="HOST URL")
+        self.label_port = tk.Label(self, text="HOST Port")
         self.label_register = tk.Label(self, text="Register")
         self.label_value = tk.Label(self, text="Value")
 
