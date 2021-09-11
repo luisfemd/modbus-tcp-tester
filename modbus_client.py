@@ -2,7 +2,7 @@ from pyModbusTCP.client import ModbusClient
 import time
 import os
 
-def send_message(plc_ip, port, register, value):
+def write_register(plc_ip, port, register, value):
     print(plc_ip)
     print(port)
 
@@ -11,7 +11,7 @@ def send_message(plc_ip, port, register, value):
     
     status = 0
     if open_response:
-        client.write_single_register(register, value)
+        client.write_single_register(int(register), int(value))
         time.sleep(100)
         client.close()
         status = 0
