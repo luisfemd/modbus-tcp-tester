@@ -1,4 +1,5 @@
 import tkinter as tk
+from functools import partial
 from modbus_client import write_register
 
 class MainScreen(tk.Frame):
@@ -28,7 +29,7 @@ class MainScreen(tk.Frame):
         self.label_status.grid(row=4, columnspan=2, sticky = tk.W + tk.E)
 
 
-        self.btn_send = tk.Button(self, text="Send", command=self.send_register, font=("Ubuntu", 10), bg="#fab90f", fg="black")
+        self.btn_send = tk.Button(self, text="Send", command= lambda:self.send_register(), font=("Ubuntu", 10), bg="#fab90f", fg="black")
         self.btn_send.grid(columnspan=2)
 
         self.pack()
