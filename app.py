@@ -40,7 +40,7 @@ class MainScreen(tk.Frame):
         register = self.entry_register.get()
         value = self.entry_value.get()
 
-        status = write_register(url, port, register, value)
+        status = write_register(url, int(port), int(register), int(value))
         if status == 1:
             self.label_status.configure(text = "error", bg="red")
         else:

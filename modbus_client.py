@@ -11,8 +11,8 @@ def write_register(plc_ip, port, register, value):
     
     status = 0
     if open_response:
-        client.write_single_register(int(register), int(value))
-        time.sleep(100)
+        client.write_single_register(register, value)
+        time.sleep(1)
         client.close()
         status = 0
     else:
